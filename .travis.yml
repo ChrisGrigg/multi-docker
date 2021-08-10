@@ -8,7 +8,7 @@ before_install:
 script:
   - docker run chrisgrigg/react-test npm test -- --coverage
 
-after_success:
+after_script:
   - docker build -t chrisgrigg/multi-client ./client
   - docker build -t chrisgrigg/multi-nginx ./nginx
   - docker build -t chrisgrigg/multi-server ./server
